@@ -3,79 +3,76 @@ import Image from "next/image";
 import { siteConfig } from "@/config/site";
 import { getAllPosts } from "@/lib/blog";
 import NewsletterBox from "@/components/NewsletterBox";
+import AdSlot from "@/components/AdSlot";
 import SchemaMarkup from "@/components/SchemaMarkup";
-import { ArrowUpRight } from "lucide-react";
+import { Award, Compass, HeartPulse } from "lucide-react";
 
 export default function HomePage() {
   const posts = getAllPosts();
   const featuredPost = posts[0];
-  const editorsPicks = posts.slice(1, 4);
-  const trendingReads = posts.slice(4, 7);
-  const latestArticles = posts.slice(7, 12);
-  const popularGuides = posts.slice(12, 15);
+  const recentPosts = posts.slice(1, 4);
 
   return (
-    <div className="relative pb-24 bg-[#FAF9F6] text-[#1C1C1C]">
-      {/* Schema Markup */}
+    <div className="relative pb-16">
+      
+      {/* Dynamic Homepage Website Schema */}
       <SchemaMarkup type="WebSite" />
 
-      {/* 1. EDITORIAL HERO (Featured Article) */}
+      {/* 1. Hero Editorial Section */}
       {featuredPost && (
-        <section className="relative w-full py-16 md:py-24 border-b border-[#E5E0DA]">
-          <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
-            <div className="flex flex-col gap-12 lg:gap-16">
+        <section className="relative w-full border-b border-border/40 py-12 md:py-20 bg-stone-50 ">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
               
-              {/* Category & Tag Line */}
-              <div className="flex items-center gap-4 justify-center md:justify-start">
-                <span className="text-[10px] uppercase tracking-[0.25em] font-sans font-bold text-[#B5945F]">
-                  {featuredPost.category.replace("-", " ")}
-                </span>
-                <span className="w-1.5 h-1.5 rounded-full bg-[#E5E0DA]"></span>
-                <span className="text-[10px] uppercase tracking-[0.2em] font-sans text-[#8C8C8C]">
-                  {featuredPost.readingTime}
-                </span>
-              </div>
-
-              {/* Huge Typography Heading */}
-              <div className="text-center md:text-left max-w-5xl">
-                <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-serif font-light leading-[1.1] tracking-tight hover:text-[#B5945F] transition-colors duration-500">
-                  <Link href={`/blog/${featuredPost.slug}`}>
+              {/* Text Info */}
+              <div className="lg:col-span-5 space-y-6">
+                <div className="inline-flex items-center gap-2">
+                  <span className="text-[10px] uppercase tracking-widest font-semibold font-sans bg-accent/10 text-accent px-2.5 py-1 rounded">
+                    Featured Article
+                  </span>
+                  <span className="text-[10px] text-muted-light font-sans uppercase tracking-widest">
+                    {featuredPost.readingTime}
+                  </span>
+                </div>
+                
+                <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-foreground leading-tight">
+                  <Link
+                    href={`/blog/${featuredPost.slug}`}
+                    className="hover:text-accent transition-colors"
+                  >
                     {featuredPost.title}
                   </Link>
                 </h1>
+
+                <p className="text-sm md:text-base text-muted  font-sans leading-relaxed">
+                  {featuredPost.description}
+                </p>
+
+                <div className="pt-2">
+                  <Link
+                    href={`/blog/${featuredPost.slug}`}
+                    className="inline-flex items-center text-xs font-sans font-bold uppercase tracking-widest border-b-2 border-accent text-foreground hover:text-accent hover:border-accent-hover pb-1 transition"
+                  >
+                    Read Authority Guide →
+                  </Link>
+                </div>
               </div>
 
-              {/* Aspect Ratio Hero Image */}
-              <div className="relative w-full aspect-[21/9] rounded-sm overflow-hidden group shadow-[0_4px_30px_rgba(28,28,28,0.02)]">
-                <Link href={`/blog/${featuredPost.slug}`}>
+              {/* Big Luxury Image with discover aspect standards */}
+              <div className="lg:col-span-7">
+                <Link
+                  href={`/blog/${featuredPost.slug}`}
+                  className="block relative aspect-[16/9] w-full overflow-hidden border border-border/80 rounded-lg luxury-shadow luxury-shadow-hover focus:outline-none focus:ring-2 focus:ring-accent"
+                >
                   <Image
                     src={featuredPost.featuredImage}
                     alt={featuredPost.title}
                     fill
-                    className="object-cover transition-transform duration-[1.2s] ease-out group-hover:scale-105"
+                    className="object-cover"
                     priority
-                    sizes="100vw"
+                    sizes="(max-width: 1024px) 100vw, 800px"
                   />
-                  <div className="absolute inset-0 bg-black/5 group-hover:bg-transparent transition-colors duration-500"></div>
                 </Link>
-              </div>
-
-              {/* Description & Link */}
-              <div className="grid grid-cols-1 md:grid-cols-12 gap-6 items-start">
-                <div className="md:col-span-8">
-                  <p className="text-base sm:text-lg font-serif font-light text-[#575757] leading-relaxed">
-                    {featuredPost.description}
-                  </p>
-                </div>
-                <div className="md:col-span-4 md:text-right pt-2">
-                  <Link
-                    href={`/blog/${featuredPost.slug}`}
-                    className="inline-flex items-center gap-2 text-xs font-sans font-semibold uppercase tracking-widest text-[#1C1C1C] hover:text-[#B5945F] transition-colors duration-300 group"
-                  >
-                    Read The Article
-                    <ArrowUpRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-                  </Link>
-                </div>
               </div>
 
             </div>
@@ -83,224 +80,174 @@ export default function HomePage() {
         </section>
       )}
 
-      {/* 2. FEATURED CATEGORIES SECTION */}
-      <section className="py-20 border-b border-[#E5E0DA] bg-[#F5F2EC]">
-        <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
-          <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
-            <div>
-              <span className="text-[10px] uppercase tracking-[0.25em] text-[#B5945F] font-sans font-bold block mb-2">
-                Fragrance Domains
-              </span>
-              <h2 className="text-3xl sm:text-4xl font-serif font-light">
-                Select Your Scent Category
-              </h2>
-            </div>
+      {/* Top Banner Ad slot (Predefined min-height to prevent CLS) */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-8">
+        <AdSlot id="home-top-banner" format="horizontal" />
+      </div>
+
+      {/* 2. Content Categories Slider / Navigation */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 border-b border-border/40">
+        <div className="text-center max-w-xl mx-auto mb-12">
+          <span className="text-xs uppercase tracking-widest text-accent font-sans font-semibold mb-2 block">
+            Fragrance Domains
+          </span>
+          <h2 className="text-3xl font-serif font-bold text-foreground">
+            Explore by Category
+          </h2>
+          <p className="text-xs text-muted font-sans mt-2">
+            Detailed, fact-checked methodologies curated across 11 educational categories.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
+          {siteConfig.categories.slice(0, 6).map((cat) => (
             <Link
-              href="/categories"
-              className="text-xs font-sans font-semibold uppercase tracking-widest text-[#1C1C1C] hover:text-[#B5945F] transition-colors"
+              key={cat.slug}
+              href={`/categories/${cat.slug}`}
+              className="p-6 border border-border/60 rounded-lg bg-white  text-center hover:border-accent hover:-translate-y-0.5 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-accent select-none"
             >
-              Browse All Categories &rarr;
+              <div className="w-8 h-8 rounded-full bg-accent/10 text-accent flex items-center justify-center mx-auto mb-3.5 font-serif font-medium text-sm">
+                {cat.title[0]}
+              </div>
+              <h3 className="text-sm font-serif font-bold text-foreground mb-1 leading-tight">
+                {cat.title}
+              </h3>
+              <span className="text-[10px] text-muted-light font-sans uppercase tracking-widest">
+                Guides →
+              </span>
             </Link>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {siteConfig.categories.slice(0, 4).map((cat) => (
-              <Link
-                key={cat.slug}
-                href={`/categories/${cat.slug}`}
-                className="p-8 bg-[#FAF9F6] border border-[#E5E0DA]/80 rounded-sm hover:border-[#B5945F] hover:shadow-[0_8px_30px_rgba(181,148,95,0.05)] transition-all duration-500 group"
-              >
-                <div className="w-10 h-10 rounded-full bg-[#F5F2EC] text-[#B5945F] flex items-center justify-center mb-6 font-serif text-sm group-hover:bg-[#B5945F] group-hover:text-white transition-colors duration-500">
-                  {cat.title[0]}
-                </div>
-                <h3 className="text-xl font-serif font-medium text-[#1C1C1C] mb-2">
-                  {cat.title}
-                </h3>
-                <p className="text-xs text-[#575757] font-sans leading-relaxed mb-4 line-clamp-2">
-                  {cat.description}
-                </p>
-                <span className="text-[10px] text-[#B5945F] font-sans uppercase tracking-widest font-semibold block transition-transform duration-300 group-hover:translate-x-1">
-                  Explore Domain &rarr;
-                </span>
-              </Link>
-            ))}
-          </div>
+          ))}
+        </div>
+        <div className="text-center mt-8">
+          <Link
+            href="/categories"
+            className="text-xs font-sans font-semibold text-accent hover:text-accent-hover uppercase tracking-widest"
+          >
+            Browse All 11 Domains →
+          </Link>
         </div>
       </section>
 
-      {/* 3. EDITOR'S PICKS & TRENDING READS */}
-      <section className="py-24 border-b border-[#E5E0DA]">
-        <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
+      {/* 3. Recent Articles Feed & Sidebar */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
+          
+          {/* Main Grid feed column */}
+          <div className="lg:col-span-8 space-y-12">
+            <h2 className="text-2xl font-serif font-bold text-foreground border-b border-border/60 pb-3 mb-6">
+              Latest Publications
+            </h2>
             
-            {/* Editor's Picks Column */}
-            <div className="lg:col-span-8 space-y-12">
-              <div className="border-b border-[#E5E0DA] pb-4 mb-8">
-                <h2 className="text-2xl sm:text-3xl font-serif font-light tracking-wide text-[#1C1C1C]">
-                  Editor&apos;s Editorial Picks
-                </h2>
-              </div>
-
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
-                {editorsPicks.map((post) => (
-                  <article key={post.slug} className="group space-y-4">
-                    <Link
-                      href={`/blog/${post.slug}`}
-                      className="block relative aspect-[4/3] rounded-sm overflow-hidden bg-[#FAF9F6] border border-[#E5E0DA]/40"
+            {recentPosts.length > 0 ? (
+              <div className="space-y-10">
+                {recentPosts.map((post) => {
+                  const authorObj = siteConfig.authors[post.author];
+                  return (
+                    <article
+                      key={post.slug}
+                      className="grid grid-cols-1 md:grid-cols-12 gap-6 items-start group"
                     >
-                      <Image
-                        src={post.featuredImage}
-                        alt={post.title}
-                        fill
-                        className="object-cover transition-transform duration-[1s] ease-out group-hover:scale-105"
-                        sizes="(max-width: 768px) 100vw, 400px"
-                      />
-                    </Link>
-                    <div className="space-y-2">
-                      <div className="flex items-center gap-2 text-[9px] uppercase tracking-[0.2em] text-[#8C8C8C] font-sans">
-                        <span className="font-semibold text-[#B5945F]">
-                          {post.category.replace("-", " ")}
-                        </span>
-                        <span>•</span>
-                        <span>{post.readingTime}</span>
+                      <Link
+                        href={`/blog/${post.slug}`}
+                        className="md:col-span-5 block relative aspect-[16/10] w-full overflow-hidden border border-border/60 rounded bg-stone-100 focus:outline-none focus:ring-2 focus:ring-accent"
+                      >
+                        <Image
+                          src={post.featuredImage}
+                          alt={post.title}
+                          fill
+                          className="object-cover group-hover:scale-[1.02] transition-transform duration-500"
+                          sizes="(max-width: 768px) 100vw, 300px"
+                        />
+                      </Link>
+                      <div className="md:col-span-7 space-y-3">
+                        <div className="flex items-center gap-3 text-[10px] text-muted-light font-sans uppercase tracking-widest">
+                          <span className="font-semibold text-accent">{post.category.replace("-", " ")}</span>
+                          <span>•</span>
+                          <span>{post.readingTime}</span>
+                        </div>
+                        <h3 className="text-xl md:text-2xl font-serif font-bold text-foreground group-hover:text-accent transition-colors">
+                          <Link href={`/blog/${post.slug}`}>
+                            {post.title}
+                          </Link>
+                        </h3>
+                        <p className="text-xs text-muted  font-sans leading-relaxed line-clamp-2">
+                          {post.description}
+                        </p>
+                        <div className="text-[10px] text-muted-light font-sans">
+                          By <span className="text-foreground">{authorObj?.name || post.author}</span>
+                        </div>
                       </div>
-                      <h3 className="text-xl sm:text-2xl font-serif leading-snug group-hover:text-[#B5945F] transition-colors duration-300">
-                        <Link href={`/blog/${post.slug}`}>
-                          {post.title}
-                        </Link>
-                      </h3>
-                      <p className="text-xs text-[#575757] font-sans leading-relaxed line-clamp-2">
-                        {post.description}
-                      </p>
-                    </div>
-                  </article>
-                ))}
+                    </article>
+                  );
+                })}
               </div>
-            </div>
+            ) : (
+              <p className="text-sm font-sans text-muted">No additional publications found.</p>
+            )}
 
-            {/* Trending Reads Column */}
-            <div className="lg:col-span-4 space-y-12">
-              <div className="border-b border-[#E5E0DA] pb-4 mb-8">
-                <h2 className="text-2xl font-serif font-light tracking-wide text-[#1C1C1C]">
-                  Trending Reads
-                </h2>
-              </div>
+            {/* Mid Feed Ad slot */}
+            <AdSlot id="home-mid-feed" format="rectangle" />
+          </div>
 
-              <div className="space-y-8">
-                {trendingReads.map((post, idx) => (
-                  <div key={post.slug} className="flex gap-6 items-start group">
-                    <span className="text-4xl font-serif font-light text-[#E5E0DA] tracking-wider leading-none">
-                      {String(idx + 1).padStart(2, "0")}
-                    </span>
-                    <div className="space-y-1.5">
-                      <span className="text-[9px] uppercase tracking-[0.2em] text-[#B5945F] font-sans font-bold block">
-                        {post.category.replace("-", " ")}
-                      </span>
-                      <h3 className="text-base font-serif font-medium leading-snug group-hover:text-[#B5945F] transition-colors duration-300">
-                        <Link href={`/blog/${post.slug}`}>{post.title}</Link>
-                      </h3>
-                    </div>
+          {/* Sidebar Area Column */}
+          <aside className="lg:col-span-4 space-y-12">
+            
+            {/* EEAT Editorial Quality Badge Box */}
+            <div className="p-6 bg-stone-50  border border-border/80 rounded-lg">
+              <h3 className="text-xs uppercase tracking-widest font-sans font-bold text-foreground mb-4">
+                Our Editorial Standards
+              </h3>
+              <ul className="space-y-4">
+                <li className="flex gap-3">
+                  <Award className="w-5 h-5 text-accent shrink-0" aria-hidden="true" />
+                  <div>
+                    <h4 className="text-sm font-serif font-bold text-foreground">Scientific Sourcing</h4>
+                    <p className="text-[11px] text-muted font-sans mt-0.5 leading-relaxed">
+                      We supplement all candle care and diffuser chemistry guides with academic study citations.
+                    </p>
                   </div>
-                ))}
+                </li>
+                <li className="flex gap-3">
+                  <Compass className="w-5 h-5 text-accent shrink-0" aria-hidden="true" />
+                  <div>
+                    <h4 className="text-sm font-serif font-bold text-foreground">Independent Reviews</h4>
+                    <p className="text-[11px] text-muted font-sans mt-0.5 leading-relaxed">
+                      Our experts conduct independent testing. We disclose any affiliate/advertising arrangements.
+                    </p>
+                  </div>
+                </li>
+                <li className="flex gap-3">
+                  <HeartPulse className="w-5 h-5 text-accent shrink-0" aria-hidden="true" />
+                  <div>
+                    <h4 className="text-sm font-serif font-bold text-foreground">Wellness Oriented</h4>
+                    <p className="text-[11px] text-muted font-sans mt-0.5 leading-relaxed">
+                      We detail olfactory impacts on focus, rest, and stress levels from certified therapists.
+                    </p>
+                  </div>
+                </li>
+              </ul>
+              <div className="mt-5 pt-4 border-t border-border/40 text-center">
+                <Link
+                  href="/about"
+                  className="text-[10px] font-sans font-bold uppercase tracking-widest text-accent hover:text-accent-hover"
+                >
+                  Meet our experts →
+                </Link>
               </div>
             </div>
 
-          </div>
+            {/* Sidebar Ad placement */}
+            <AdSlot id="home-sidebar" format="vertical" />
+
+          </aside>
         </div>
       </section>
 
-      {/* 4. LATEST ARTICLES & POPULAR GUIDES */}
-      <section className="py-24">
-        <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
-            
-            {/* Latest Publications */}
-            <div className="lg:col-span-8 space-y-10">
-              <div className="border-b border-[#E5E0DA] pb-4 mb-8">
-                <h2 className="text-2xl sm:text-3xl font-serif font-light tracking-wide">
-                  Latest Publications
-                </h2>
-              </div>
+      {/* 4. Full Width Newsletter Container */}
+      <NewsletterBox />
 
-              <div className="divide-y divide-[#E5E0DA]/60 space-y-10">
-                {latestArticles.map((post) => (
-                  <article
-                    key={post.slug}
-                    className="pt-10 first:pt-0 grid grid-cols-1 sm:grid-cols-12 gap-8 group items-center"
-                  >
-                    <Link
-                      href={`/blog/${post.slug}`}
-                      className="sm:col-span-5 block relative aspect-[16/10] rounded-sm overflow-hidden bg-[#FAF9F6] border border-[#E5E0DA]/30"
-                    >
-                      <Image
-                        src={post.featuredImage}
-                        alt={post.title}
-                        fill
-                        className="object-cover transition-transform duration-[1s] ease-out group-hover:scale-105"
-                        sizes="(max-width: 768px) 100vw, 300px"
-                      />
-                    </Link>
-                    <div className="sm:col-span-7 space-y-3">
-                      <span className="text-[9px] uppercase tracking-[0.2em] text-[#B5945F] font-sans font-bold block">
-                        {post.category.replace("-", " ")}
-                      </span>
-                      <h3 className="text-xl sm:text-2xl font-serif leading-snug group-hover:text-[#B5945F] transition-colors duration-300">
-                        <Link href={`/blog/${post.slug}`}>{post.title}</Link>
-                      </h3>
-                      <p className="text-xs text-[#575757] font-sans leading-relaxed line-clamp-2">
-                        {post.description}
-                      </p>
-                      <div className="text-[9px] text-[#8C8C8C] uppercase tracking-wider font-sans">
-                        {post.readingTime}
-                      </div>
-                    </div>
-                  </article>
-                ))}
-              </div>
-            </div>
-
-            {/* Popular Guides */}
-            <div className="lg:col-span-4 space-y-10">
-              <div className="border-b border-[#E5E0DA] pb-4 mb-8">
-                <h2 className="text-2xl font-serif font-light tracking-wide">
-                  Popular Guides
-                </h2>
-              </div>
-
-              <div className="grid grid-cols-1 gap-8">
-                {popularGuides.map((post) => (
-                  <article key={post.slug} className="group space-y-3">
-                    <Link
-                      href={`/blog/${post.slug}`}
-                      className="block relative aspect-[16/9] rounded-sm overflow-hidden bg-[#FAF9F6] border border-[#E5E0DA]/30"
-                    >
-                      <Image
-                        src={post.featuredImage}
-                        alt={post.title}
-                        fill
-                        className="object-cover transition-transform duration-[1s] ease-out group-hover:scale-105"
-                        sizes="300px"
-                      />
-                    </Link>
-                    <h3 className="text-lg font-serif font-medium leading-snug group-hover:text-[#B5945F] transition-colors duration-300">
-                      <Link href={`/blog/${post.slug}`}>{post.title}</Link>
-                    </h3>
-                  </article>
-                ))}
-              </div>
-            </div>
-
-          </div>
-        </div>
-      </section>
-
-      {/* 5. NEWSLETTER BOX */}
-      <section className="bg-[#F5F2EC] py-20 border-t border-b border-[#E5E0DA]">
-        <div className="max-w-4xl mx-auto px-6 text-center">
-          <NewsletterBox />
-        </div>
-      </section>
     </div>
   );
 }
+
 
