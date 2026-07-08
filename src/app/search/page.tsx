@@ -33,7 +33,7 @@ export default function SearchPage() {
         <h1 className="text-4xl md:text-5xl font-serif font-bold text-foreground">
           Scent Knowledge Search
         </h1>
-        <p className="text-sm md:text-base text-muted dark:text-stone-300 font-sans mt-3 max-w-2xl leading-relaxed">
+        <p className="text-sm md:text-base text-muted  font-sans mt-3 max-w-2xl leading-relaxed">
           Enter key terms (e.g. "wick", "rattan", "soot") to find relevant scientific care and buying guides across our fragrance domains.
         </p>
       </header>

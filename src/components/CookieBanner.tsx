@@ -49,9 +49,9 @@ export default function CookieBanner() {
     <div
       role="region"
       aria-label="Cookie Consent Banner"
-      className="fixed bottom-0 left-0 right-0 z-50 p-4 md:p-6 bg-white dark:bg-stone-900 border-t border-border/80 luxury-shadow flex flex-col md:flex-row items-center justify-between gap-4 animate-in fade-in slide-in-from-bottom-5 duration-300"
+      className="fixed bottom-0 left-0 right-0 z-50 p-4 md:p-6 bg-white  border-t border-border/80 luxury-shadow flex flex-col md:flex-row items-center justify-between gap-4 animate-in fade-in slide-in-from-bottom-5 duration-300"
     >
-      <div className="flex-1 text-sm text-muted dark:text-stone-300">
+      <div className="flex-1 text-sm text-muted ">
         <p className="leading-relaxed">
           We use cookies to analyze site traffic, personalize content, and support our advertising partners to enhance your browsing experience. Read our{" "}
           <Link

@@ -22,7 +22,7 @@ export default function AuthorBox({
   if (!author) return null;
 
   return (
-    <div className="my-8 p-6 bg-white dark:bg-stone-900 border border-border/80 rounded-lg luxury-shadow">
+    <div className="my-8 p-6 bg-white  border border-border/80 rounded-lg luxury-shadow">
       {/* Date metadata display */}
       <div className="flex flex-wrap items-center justify-between gap-4 text-xs font-sans text-muted-light uppercase tracking-widest pb-4 border-b border-border/40">
         <div>
@@ -61,7 +61,7 @@ export default function AuthorBox({
               {author.name}
             </Link>
             <p className="text-xs text-muted-light font-sans mt-0.5">{author.role}</p>
-            <p className="text-sm text-muted dark:text-stone-300 mt-2 leading-relaxed font-sans">
+            <p className="text-sm text-muted  mt-2 leading-relaxed font-sans">
               {author.bio}
             </p>
             {author.credentials && author.credentials.length > 0 && (
@@ -69,7 +69,7 @@ export default function AuthorBox({
                 {author.credentials.slice(0, 2).map((cred, idx) => (
                   <span
                     key={idx}
-                    className="text-[10px] font-sans bg-stone-50 dark:bg-stone-800 text-muted px-2 py-0.5 border border-border/60 rounded-full"
+                    className="text-[10px] font-sans bg-stone-50  text-muted px-2 py-0.5 border border-border/60 rounded-full"
                   >
                     {cred}
                   </span>
@@ -105,7 +105,7 @@ export default function AuthorBox({
                 {reviewer.name}
               </Link>
               <p className="text-xs text-muted-light font-sans mt-0.5">{reviewer.role}</p>
-              <p className="text-sm text-muted dark:text-stone-300 mt-2 leading-relaxed font-sans">
+              <p className="text-sm text-muted  mt-2 leading-relaxed font-sans">
                 {reviewer.bio}
               </p>
             </div>

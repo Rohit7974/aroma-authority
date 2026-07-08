@@ -55,7 +55,7 @@ export default async function AuthorPage({ params }: AuthorPageProps) {
       />
 
       {/* Author profile Header */}
-      <section className="bg-stone-50 dark:bg-stone-900/30 border border-border/80 rounded-xl p-8 md:p-12 mb-12 luxury-shadow">
+      <section className="bg-stone-50  border border-border/80 rounded-xl p-8 md:p-12 mb-12 luxury-shadow">
         <div className="flex flex-col md:flex-row items-center md:items-start gap-8">
           
           <div className="relative w-28 h-28 md:w-36 md:h-36 rounded-full overflow-hidden border-2 border-accent shrink-0 bg-stone-100 luxury-shadow">
@@ -82,7 +82,7 @@ export default async function AuthorPage({ params }: AuthorPageProps) {
               <p className="text-sm text-muted-light font-sans mt-0.5">{author.role}</p>
             </div>
 
-            <p className="text-sm md:text-base text-muted dark:text-stone-300 font-sans leading-relaxed">
+            <p className="text-sm md:text-base text-muted  font-sans leading-relaxed">
               {author.bio}
             </p>
 
@@ -118,7 +118,7 @@ export default async function AuthorPage({ params }: AuthorPageProps) {
             {authoredPosts.map((post) => (
               <article
                 key={post.slug}
-                className="border border-border/60 rounded-lg overflow-hidden bg-white dark:bg-stone-900 flex flex-col h-full luxury-shadow luxury-shadow-hover group"
+                className="border border-border/60 rounded-lg overflow-hidden bg-white  flex flex-col h-full luxury-shadow luxury-shadow-hover group"
               >
                 <Link
                   href={`/blog/${post.slug}`}
@@ -140,7 +140,7 @@ export default async function AuthorPage({ params }: AuthorPageProps) {
                   <h3 className="text-lg font-serif font-bold text-foreground group-hover:text-accent transition-colors leading-snug">
                     <Link href={`/blog/${post.slug}`}>{post.title}</Link>
                   </h3>
-                  <p className="text-xs text-muted dark:text-stone-300 font-sans leading-relaxed line-clamp-2">
+                  <p className="text-xs text-muted  font-sans leading-relaxed line-clamp-2">
                     {post.description}
                   </p>
                 </div>
@@ -163,7 +163,7 @@ export default async function AuthorPage({ params }: AuthorPageProps) {
             {reviewedPosts.map((post) => (
               <article
                 key={post.slug}
-                className="border border-border/60 rounded-lg overflow-hidden bg-white dark:bg-stone-900 flex flex-col h-full luxury-shadow luxury-shadow-hover group"
+                className="border border-border/60 rounded-lg overflow-hidden bg-white  flex flex-col h-full luxury-shadow luxury-shadow-hover group"
               >
                 <Link
                   href={`/blog/${post.slug}`}
@@ -180,14 +180,14 @@ export default async function AuthorPage({ params }: AuthorPageProps) {
                 
                 <div className="p-6 flex flex-col flex-1 space-y-3">
                   <div className="text-[10px] text-muted-light font-sans uppercase tracking-widest flex items-center gap-1">
-                    <span className="text-emerald-700 dark:text-emerald-500 font-semibold">Reviewed</span>
+                    <span className="text-emerald-700  font-semibold">Reviewed</span>
                     <span>•</span>
                     <span>{post.category.replace("-", " ")}</span>
                   </div>
                   <h3 className="text-lg font-serif font-bold text-foreground group-hover:text-accent transition-colors leading-snug">
                     <Link href={`/blog/${post.slug}`}>{post.title}</Link>
                   </h3>
-                  <p className="text-xs text-muted dark:text-stone-300 font-sans leading-relaxed line-clamp-2">
+                  <p className="text-xs text-muted  font-sans leading-relaxed line-clamp-2">
                     {post.description}
                   </p>
                 </div>

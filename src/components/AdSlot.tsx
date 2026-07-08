@@ -30,7 +30,7 @@ export default function AdSlot({ id, format = "auto", className = "" }: AdSlotPr
 
   return (
     <div
-      className={`relative my-8 border border-border/40 bg-stone-50/50 dark:bg-stone-900/30 rounded flex flex-col items-center justify-center overflow-hidden transition-all duration-300 ${heightClass} ${widthClass} ${className}`}
+      className={`relative my-8 border border-border/40 bg-stone-50/50  rounded flex flex-col items-center justify-center overflow-hidden transition-all duration-300 ${heightClass} ${widthClass} ${className}`}
       data-ad-slot-container={id}
     >
       {/* Background visual styling showing luxury minimal container */}

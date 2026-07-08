@@ -59,7 +59,7 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
         <h1 className="text-4xl md:text-5xl font-serif font-bold text-foreground">
           {catObj.title}
         </h1>
-        <p className="text-sm md:text-base text-muted dark:text-stone-300 font-sans mt-3 max-w-2xl leading-relaxed">
+        <p className="text-sm md:text-base text-muted  font-sans mt-3 max-w-2xl leading-relaxed">
           {catObj.description}
         </p>
       </header>
@@ -74,7 +74,7 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
             return (
               <article
                 key={post.slug}
-                className="border border-border/60 rounded-lg overflow-hidden bg-white dark:bg-stone-900 flex flex-col h-full luxury-shadow luxury-shadow-hover group"
+                className="border border-border/60 rounded-lg overflow-hidden bg-white  flex flex-col h-full luxury-shadow luxury-shadow-hover group"
               >
                 <Link
                   href={`/blog/${post.slug}`}
@@ -99,7 +99,7 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
                     <Link href={`/blog/${post.slug}`}>{post.title}</Link>
                   </h2>
 
-                  <p className="text-xs text-muted dark:text-stone-300 font-sans leading-relaxed line-clamp-3 flex-1">
+                  <p className="text-xs text-muted  font-sans leading-relaxed line-clamp-3 flex-1">
                     {post.description}
                   </p>
 
@@ -115,7 +115,7 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
           })}
         </div>
       ) : (
-        <div className="text-center py-16 border border-dashed border-border/80 rounded-lg bg-stone-50/50 dark:bg-stone-900/10">
+        <div className="text-center py-16 border border-dashed border-border/80 rounded-lg bg-stone-50/50 ">
           <p className="text-sm font-sans text-muted">No publications yet under {catObj.title}. Check back soon!</p>
           <div className="mt-4">
             <Link

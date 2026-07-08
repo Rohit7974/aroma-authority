@@ -14,7 +14,7 @@ export default function NotFound() {
         <h1 className="text-3xl md:text-4xl font-serif font-bold text-foreground">
           Scent Pathway Lost
         </h1>
-        <p className="text-sm text-muted dark:text-stone-300 font-sans leading-relaxed">
+        <p className="text-sm text-muted  font-sans leading-relaxed">
           The educational guide or page you are looking for has been moved, renamed, or is temporarily offline. Let us guide you back to our scent registry.
         </p>
       </div>
@@ -23,28 +23,28 @@ export default function NotFound() {
       <div className="grid grid-cols-2 gap-3 text-left">
         <Link
           href="/"
-          className="p-4 border border-border/60 hover:border-accent rounded bg-white dark:bg-stone-900 flex items-center gap-3 text-xs uppercase tracking-widest font-sans font-semibold text-muted hover:text-foreground transition-all"
+          className="p-4 border border-border/60 hover:border-accent rounded bg-white  flex items-center gap-3 text-xs uppercase tracking-widest font-sans font-semibold text-muted hover:text-foreground transition-all"
         >
           <Home className="w-4 h-4 text-accent shrink-0" />
           <span>Home</span>
         </Link>
         <Link
           href="/blog"
-          className="p-4 border border-border/60 hover:border-accent rounded bg-white dark:bg-stone-900 flex items-center gap-3 text-xs uppercase tracking-widest font-sans font-semibold text-muted hover:text-foreground transition-all"
+          className="p-4 border border-border/60 hover:border-accent rounded bg-white  flex items-center gap-3 text-xs uppercase tracking-widest font-sans font-semibold text-muted hover:text-foreground transition-all"
         >
           <BookOpen className="w-4 h-4 text-accent shrink-0" />
           <span>Scent Library</span>
         </Link>
         <Link
           href="/categories"
-          className="p-4 border border-border/60 hover:border-accent rounded bg-white dark:bg-stone-900 flex items-center gap-3 text-xs uppercase tracking-widest font-sans font-semibold text-muted hover:text-foreground transition-all"
+          className="p-4 border border-border/60 hover:border-accent rounded bg-white  flex items-center gap-3 text-xs uppercase tracking-widest font-sans font-semibold text-muted hover:text-foreground transition-all"
         >
           <Compass className="w-4 h-4 text-accent shrink-0" />
           <span>Categories</span>
         </Link>
         <Link
           href="/search"
-          className="p-4 border border-border/60 hover:border-accent rounded bg-white dark:bg-stone-900 flex items-center gap-3 text-xs uppercase tracking-widest font-sans font-semibold text-muted hover:text-foreground transition-all"
+          className="p-4 border border-border/60 hover:border-accent rounded bg-white  flex items-center gap-3 text-xs uppercase tracking-widest font-sans font-semibold text-muted hover:text-foreground transition-all"
         >
           <Search className="w-4 h-4 text-accent shrink-0" />
           <span>Search</span>

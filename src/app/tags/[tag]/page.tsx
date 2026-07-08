@@ -71,7 +71,7 @@ export default async function TagPage({ params }: TagPageProps) {
             return (
               <article
                 key={post.slug}
-                className="border border-border/60 rounded-lg overflow-hidden bg-white dark:bg-stone-900 flex flex-col h-full luxury-shadow luxury-shadow-hover group"
+                className="border border-border/60 rounded-lg overflow-hidden bg-white  flex flex-col h-full luxury-shadow luxury-shadow-hover group"
               >
                 <Link
                   href={`/blog/${post.slug}`}
@@ -96,7 +96,7 @@ export default async function TagPage({ params }: TagPageProps) {
                     <Link href={`/blog/${post.slug}`}>{post.title}</Link>
                   </h2>
 
-                  <p className="text-xs text-muted dark:text-stone-300 font-sans leading-relaxed line-clamp-3 flex-1">
+                  <p className="text-xs text-muted  font-sans leading-relaxed line-clamp-3 flex-1">
                     {post.description}
                   </p>
 
@@ -112,7 +112,7 @@ export default async function TagPage({ params }: TagPageProps) {
           })}
         </div>
       ) : (
-        <div className="text-center py-16 border border-dashed border-border/80 rounded-lg bg-stone-50/50 dark:bg-stone-900/10">
+        <div className="text-center py-16 border border-dashed border-border/80 rounded-lg bg-stone-50/50 ">
           <p className="text-sm font-sans text-muted">No publications found for this tag.</p>
           <div className="mt-4">
             <Link

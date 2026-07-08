@@ -23,7 +23,7 @@ export default function BlogIndexPage() {
         <h1 className="text-4xl md:text-5xl font-serif font-bold text-foreground">
           The Scent Library
         </h1>
-        <p className="text-sm md:text-base text-muted dark:text-stone-300 font-sans mt-3 max-w-2xl leading-relaxed">
+        <p className="text-sm md:text-base text-muted  font-sans mt-3 max-w-2xl leading-relaxed">
           Access our comprehensive collection of long-form articles, instructions, and reviews. Every post is fact-checked by our chemists and designers.
         </p>
       </header>
@@ -43,7 +43,7 @@ export default function BlogIndexPage() {
           <Link
             key={cat.slug}
             href={`/categories/${cat.slug}`}
-            className="px-3.5 py-1.5 bg-stone-50 hover:bg-stone-100 dark:bg-stone-900/60 dark:hover:bg-stone-800 text-muted hover:text-foreground text-xs uppercase tracking-wider font-semibold rounded border border-border/40 transition"
+            className="px-3.5 py-1.5 bg-stone-50 hover:bg-stone-100   text-muted hover:text-foreground text-xs uppercase tracking-wider font-semibold rounded border border-border/40 transition"
           >
             {cat.title}
           </Link>
@@ -57,7 +57,7 @@ export default function BlogIndexPage() {
             return (
               <div key={post.slug} className="flex flex-col h-full">
                 {/* Visual grid post card */}
-                <article className="border border-border/60 rounded-lg overflow-hidden bg-white dark:bg-stone-900 flex flex-col h-full luxury-shadow luxury-shadow-hover group">
+                <article className="border border-border/60 rounded-lg overflow-hidden bg-white  flex flex-col h-full luxury-shadow luxury-shadow-hover group">
                   <Link
                     href={`/blog/${post.slug}`}
                     className="block relative aspect-[16/10] w-full overflow-hidden bg-stone-100 focus:outline-none"
@@ -81,7 +81,7 @@ export default function BlogIndexPage() {
                       <Link href={`/blog/${post.slug}`}>{post.title}</Link>
                     </h2>
 
-                    <p className="text-xs text-muted dark:text-stone-300 font-sans leading-relaxed line-clamp-3 flex-1">
+                    <p className="text-xs text-muted  font-sans leading-relaxed line-clamp-3 flex-1">
                       {post.description}
                     </p>
 

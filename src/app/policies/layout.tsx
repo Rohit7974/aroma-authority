@@ -19,7 +19,7 @@ export default function PoliciesLayout({
         <aside className="lg:col-span-4">
           <nav
             aria-label="Policies Directory"
-            className="p-6 bg-stone-50 dark:bg-stone-900/30 border border-border/60 rounded-lg sticky top-28 space-y-4"
+            className="p-6 bg-stone-50  border border-border/60 rounded-lg sticky top-28 space-y-4"
           >
             <h2 className="text-xs uppercase tracking-widest font-sans font-bold text-foreground border-b border-border/40 pb-2">
               Legal & Standards
@@ -40,8 +40,8 @@ export default function PoliciesLayout({
         </aside>
 
         {/* Policy document viewport */}
-        <div className="lg:col-span-8 bg-white dark:bg-stone-900 border border-border rounded-lg p-6 md:p-12 luxury-shadow">
-          <article className="prose max-w-none prose-stone dark:prose-invert font-sans text-sm text-muted dark:text-stone-300 space-y-6">
+        <div className="lg:col-span-8 bg-white  border border-border rounded-lg p-6 md:p-12 luxury-shadow">
+          <article className="prose max-w-none prose-stone  font-sans text-sm text-muted  space-y-6">
             {children}
           </article>
         </div>

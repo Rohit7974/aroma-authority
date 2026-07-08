@@ -64,13 +64,13 @@ const Table = ({ children }: any) => (
 );
 
 const THead = ({ children }: any) => (
-  <thead className="bg-stone-50 dark:bg-stone-900/60 text-xs font-sans uppercase tracking-widest text-muted-light">
+  <thead className="bg-stone-50  text-xs font-sans uppercase tracking-widest text-muted-light">
     {children}
   </thead>
 );
 
 const TBody = ({ children }: any) => (
-  <tbody className="divide-y divide-border/40 bg-white dark:bg-stone-950">
+  <tbody className="divide-y divide-border/40 bg-white ">
     {children}
   </tbody>
 );
@@ -82,7 +82,7 @@ const TH = ({ children }: any) => (
 );
 
 const TD = ({ children }: any) => (
-  <td className="px-4 py-3 text-muted dark:text-stone-300">
+  <td className="px-4 py-3 text-muted ">
     {children}
   </td>
 );
@@ -91,27 +91,27 @@ const TD = ({ children }: any) => (
 const Callout = ({ type = "note", children }: { type?: "note" | "tip" | "warning" | "caution"; children: React.ReactNode }) => {
   const styles = {
     note: {
-      border: "border-blue-200/80 dark:border-blue-900/40",
-      bg: "bg-blue-50/50 dark:bg-blue-950/10",
-      text: "text-blue-900 dark:text-blue-300",
+      border: "border-blue-200/80 ",
+      bg: "bg-blue-50/50 ",
+      text: "text-blue-900 ",
       icon: <Info className="w-5 h-5 text-blue-600 shrink-0 mt-0.5" />
     },
     tip: {
-      border: "border-emerald-200/80 dark:border-emerald-900/40",
-      bg: "bg-emerald-50/50 dark:bg-emerald-950/10",
-      text: "text-emerald-900 dark:text-emerald-300",
+      border: "border-emerald-200/80 ",
+      bg: "bg-emerald-50/50 ",
+      text: "text-emerald-900 ",
       icon: <Lightbulb className="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" />
     },
     warning: {
-      border: "border-amber-200/80 dark:border-amber-900/40",
-      bg: "bg-amber-50/50 dark:bg-amber-950/10",
-      text: "text-amber-900 dark:text-amber-300",
+      border: "border-amber-200/80 ",
+      bg: "bg-amber-50/50 ",
+      text: "text-amber-900 ",
       icon: <AlertTriangle className="w-5 h-5 text-amber-600 shrink-0 mt-0.5" />
     },
     caution: {
-      border: "border-rose-200/80 dark:border-rose-900/40",
-      bg: "bg-rose-50/50 dark:bg-rose-950/10",
-      text: "text-rose-900 dark:text-rose-300",
+      border: "border-rose-200/80 ",
+      bg: "bg-rose-50/50 ",
+      text: "text-rose-900 ",
       icon: <AlertCircle className="w-5 h-5 text-rose-600 shrink-0 mt-0.5" />
     }
   };
@@ -144,17 +144,17 @@ export const mdxComponents = {
     </blockquote>
   ),
   p: ({ children }: any) => (
-    <p className="font-sans text-base leading-relaxed text-muted dark:text-stone-300 mb-6 antialiased">
+    <p className="font-sans text-base leading-relaxed text-muted  mb-6 antialiased">
       {children}
     </p>
   ),
   ul: ({ children }: any) => (
-    <ul className="list-disc list-outside pl-6 mb-6 space-y-2 text-muted dark:text-stone-300 font-sans text-base">
+    <ul className="list-disc list-outside pl-6 mb-6 space-y-2 text-muted  font-sans text-base">
       {children}
     </ul>
   ),
   ol: ({ children }: any) => (
-    <ol className="list-decimal list-outside pl-6 mb-6 space-y-2 text-muted dark:text-stone-300 font-sans text-base">
+    <ol className="list-decimal list-outside pl-6 mb-6 space-y-2 text-muted  font-sans text-base">
       {children}
     </ol>
   ),
@@ -164,7 +164,7 @@ export const mdxComponents = {
     </li>
   ),
   code: ({ children, ...props }: any) => (
-    <code className="bg-stone-100 dark:bg-stone-800 text-accent font-mono text-sm px-1.5 py-0.5 rounded border border-border/40" {...props}>
+    <code className="bg-stone-100  text-accent font-mono text-sm px-1.5 py-0.5 rounded border border-border/40" {...props}>
       {children}
     </code>
   ),

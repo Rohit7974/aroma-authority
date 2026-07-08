@@ -46,7 +46,7 @@ export default function TableOfContents({ headings }: TableOfContentsProps) {
   return (
     <nav
       aria-label="Table of Contents"
-      className="p-6 bg-white dark:bg-stone-900 border border-border/80 rounded-lg luxury-shadow sticky top-28"
+      className="p-6 bg-white  border border-border/80 rounded-lg luxury-shadow sticky top-28"
     >
       <h2 className="text-xs uppercase tracking-widest font-sans font-semibold text-muted-light mb-4 border-b border-border/60 pb-2">
         Table of Contents

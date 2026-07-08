@@ -44,8 +44,8 @@ export default function Header() {
       <header
         className={`sticky top-0 z-40 w-full border-b border-border/40 transition-all duration-300 ${
           isScrolled
-            ? "bg-white/80 dark:bg-stone-900/80 backdrop-blur-md luxury-shadow py-3"
-            : "bg-white/60 dark:bg-stone-900/60 backdrop-blur-sm py-5"
+            ? "bg-white/80  backdrop-blur-md luxury-shadow py-3"
+            : "bg-white/60  backdrop-blur-sm py-5"
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between gap-4">
@@ -85,7 +85,7 @@ export default function Header() {
                 placeholder="Search..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-48 xl:w-56 pl-3 pr-8 py-1.5 bg-stone-50 dark:bg-stone-950 border border-border focus:border-accent focus:ring-1 focus:ring-accent/40 rounded text-xs text-foreground placeholder:text-muted-light/60 transition outline-none"
+                className="w-48 xl:w-56 pl-3 pr-8 py-1.5 bg-stone-50  border border-border focus:border-accent focus:ring-1 focus:ring-accent/40 rounded text-xs text-foreground placeholder:text-muted-light/60 transition outline-none"
               />
               <button
                 type="submit"
@@ -113,7 +113,7 @@ export default function Header() {
         {mobileMenuOpen && (
           <div
             id="mobile-nav"
-            className="md:hidden border-t border-border/40 bg-white dark:bg-stone-900 w-full py-4 px-4 sm:px-6 flex flex-col space-y-4 animate-in slide-in-from-top-4 duration-300"
+            className="md:hidden border-t border-border/40 bg-white  w-full py-4 px-4 sm:px-6 flex flex-col space-y-4 animate-in slide-in-from-top-4 duration-300"
           >
             {/* Search form for Mobile */}
             <form onSubmit={handleSearchSubmit} className="relative w-full">
@@ -126,7 +126,7 @@ export default function Header() {
                 placeholder="Search articles..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full pl-3 pr-10 py-2.5 bg-stone-50 dark:bg-stone-950 border border-border focus:border-accent focus:ring-1 focus:ring-accent/40 rounded text-sm text-foreground outline-none"
+                className="w-full pl-3 pr-10 py-2.5 bg-stone-50  border border-border focus:border-accent focus:ring-1 focus:ring-accent/40 rounded text-sm text-foreground outline-none"
               />
               <button
                 type="submit"

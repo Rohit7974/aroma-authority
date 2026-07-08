@@ -27,7 +27,7 @@ export default function CategoriesPage() {
         <h1 className="text-4xl md:text-5xl font-serif font-bold text-foreground">
           Fragrance Domains
         </h1>
-        <p className="text-sm md:text-base text-muted dark:text-stone-300 font-sans mt-3 max-w-2xl leading-relaxed">
+        <p className="text-sm md:text-base text-muted  font-sans mt-3 max-w-2xl leading-relaxed">
           Navigate our scent architecture. Explore comprehensive guides and chemistry-focused methodologies organized across 11 key home fragrance domains.
         </p>
       </header>
@@ -44,7 +44,7 @@ export default function CategoriesPage() {
             <Link
               key={cat.slug}
               href={`/categories/${cat.slug}`}
-              className="p-8 border border-border hover:border-accent bg-white dark:bg-stone-900 rounded-lg flex flex-col justify-between h-64 luxury-shadow luxury-shadow-hover focus:outline-none focus:ring-2 focus:ring-accent select-none"
+              className="p-8 border border-border hover:border-accent bg-white  rounded-lg flex flex-col justify-between h-64 luxury-shadow luxury-shadow-hover focus:outline-none focus:ring-2 focus:ring-accent select-none"
             >
               <div>
                 <div className="flex items-center justify-between">
@@ -60,7 +60,7 @@ export default function CategoriesPage() {
                   {cat.title}
                 </h2>
                 
-                <p className="text-xs text-muted dark:text-stone-300 font-sans leading-relaxed line-clamp-3">
+                <p className="text-xs text-muted  font-sans leading-relaxed line-clamp-3">
                   {cat.description}
                 </p>
               </div>

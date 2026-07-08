@@ -21,7 +21,7 @@ export default function AboutPage() {
         <h1 className="text-4xl md:text-5xl font-serif font-bold text-foreground">
           About AromaAuthority
         </h1>
-        <p className="text-sm md:text-base text-muted dark:text-stone-300 font-sans mt-3 max-w-2xl leading-relaxed">
+        <p className="text-sm md:text-base text-muted  font-sans mt-3 max-w-2xl leading-relaxed">
           We are an independent educational authority dedicated to the chemistry, physics, safety, and design of home scenting systems.
         </p>
       </header>
@@ -32,10 +32,10 @@ export default function AboutPage() {
           <h2 className="text-3xl font-serif font-bold text-foreground">
             Our Mission: Raising Scent Literacy
           </h2>
-          <p className="text-sm text-muted dark:text-stone-300 font-sans leading-relaxed">
+          <p className="text-sm text-muted  font-sans leading-relaxed">
             Many home fragrance sites compile simple reviews or push products. At AromaAuthority, we believe that understanding the science behind the scent is key to enjoying it safely. 
           </p>
-          <p className="text-sm text-muted dark:text-stone-300 font-sans leading-relaxed">
+          <p className="text-sm text-muted  font-sans leading-relaxed">
             From the capillary physics of rattan fibers to the carbon combustion of soy wax wicks, our mission is to provide clear, scientific methodologies that maximize your olfactory experience while keeping your home environment healthy.
           </p>
         </div>
@@ -54,13 +54,13 @@ export default function AboutPage() {
       <AdSlot id="about-mid-ad" format="horizontal" />
 
       {/* 3. Editorial Integrity & EEAT standards */}
-      <section className="py-12 border-y border-border/40 grid grid-cols-1 md:grid-cols-3 gap-8 mb-16 bg-stone-50/50 dark:bg-stone-900/10 p-8 rounded-xl">
+      <section className="py-12 border-y border-border/40 grid grid-cols-1 md:grid-cols-3 gap-8 mb-16 bg-stone-50/50  p-8 rounded-xl">
         <div className="space-y-3">
           <div className="w-10 h-10 rounded-full bg-accent/10 text-accent flex items-center justify-center">
             <Award className="w-5 h-5" />
           </div>
           <h3 className="text-lg font-serif font-bold text-foreground">Chemistry Led</h3>
-          <p className="text-xs text-muted dark:text-stone-300 font-sans leading-relaxed">
+          <p className="text-xs text-muted  font-sans leading-relaxed">
             Our guides are authored and reviewed by organic chemists who understand formulation chemistry, flashpoints, and organic emissions profiles.
           </p>
         </div>
@@ -69,7 +69,7 @@ export default function AboutPage() {
             <ShieldAlert className="w-5 h-5" />
           </div>
           <h3 className="text-lg font-serif font-bold text-foreground">Independent Testing</h3>
-          <p className="text-xs text-muted dark:text-stone-300 font-sans leading-relaxed">
+          <p className="text-xs text-muted  font-sans leading-relaxed">
             We purchase every wax vessel and carrier oil blend ourselves. We perform burning memory tests in standard draft-controlled rooms.
           </p>
         </div>
@@ -78,7 +78,7 @@ export default function AboutPage() {
             <FileText className="w-5 h-5" />
           </div>
           <h3 className="text-lg font-serif font-bold text-foreground">Citations & References</h3>
-          <p className="text-xs text-muted dark:text-stone-300 font-sans leading-relaxed">
+          <p className="text-xs text-muted  font-sans leading-relaxed">
             Every safety warning or molecular assertion is referenced at the bottom of the article using valid academic citations.
           </p>
         </div>
@@ -97,7 +97,7 @@ export default function AboutPage() {
           {Object.values(siteConfig.authors).map((author) => (
             <div
               key={author.slug}
-              className="border border-border/60 rounded-lg p-6 bg-white dark:bg-stone-900 flex flex-col justify-between space-y-6 luxury-shadow"
+              className="border border-border/60 rounded-lg p-6 bg-white  flex flex-col justify-between space-y-6 luxury-shadow"
             >
               <div className="flex gap-4">
                 <div className="relative w-16 h-16 rounded-full overflow-hidden border border-border shrink-0 bg-stone-100">
@@ -119,7 +119,7 @@ export default function AboutPage() {
                   <span className="text-[10px] uppercase tracking-widest text-muted-light font-sans block mt-0.5">
                     {author.role}
                   </span>
-                  <p className="text-xs text-muted dark:text-stone-300 font-sans mt-3 leading-relaxed">
+                  <p className="text-xs text-muted  font-sans mt-3 leading-relaxed">
                     {author.bio}
                   </p>
                 </div>

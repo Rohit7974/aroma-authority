@@ -94,7 +94,7 @@ function SearchClientInner({ posts }: SearchClientProps) {
           placeholder="Search for wicks, soy wax, diffusers..."
           value={query}
           onChange={(e) => handleInputChange(e.target.value)}
-          className="w-full pl-12 pr-12 py-3.5 bg-white dark:bg-stone-900 border border-border focus:border-accent focus:ring-2 focus:ring-accent/20 rounded-lg text-base text-foreground placeholder:text-muted-light/60 transition outline-none luxury-shadow"
+          className="w-full pl-12 pr-12 py-3.5 bg-white  border border-border focus:border-accent focus:ring-2 focus:ring-accent/20 rounded-lg text-base text-foreground placeholder:text-muted-light/60 transition outline-none luxury-shadow"
         />
         {query && (
           <button
@@ -119,7 +119,7 @@ function SearchClientInner({ posts }: SearchClientProps) {
             className={`px-4 py-1.5 rounded-full text-xs uppercase tracking-wider font-semibold border transition focus:outline-none focus:ring-2 focus:ring-accent/40 ${
               activeCategory === cat
                 ? "bg-accent border-accent text-white"
-                : "bg-white dark:bg-stone-900 border-border/80 text-muted hover:text-foreground hover:border-accent"
+                : "bg-white  border-border/80 text-muted hover:text-foreground hover:border-accent"
             }`}
           >
             {cat.replace("-", " ")}
@@ -137,7 +137,7 @@ function SearchClientInner({ posts }: SearchClientProps) {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {results.map((post, index) => (
               <div key={post.slug} className="flex flex-col h-full">
-                <article className="border border-border/60 rounded-lg overflow-hidden bg-white dark:bg-stone-900 flex flex-col h-full luxury-shadow luxury-shadow-hover group">
+                <article className="border border-border/60 rounded-lg overflow-hidden bg-white  flex flex-col h-full luxury-shadow luxury-shadow-hover group">
                   <Link
                     href={`/blog/${post.slug}`}
                     className="block relative aspect-[16/10] w-full overflow-hidden bg-stone-100 focus:outline-none"
@@ -161,7 +161,7 @@ function SearchClientInner({ posts }: SearchClientProps) {
                       <Link href={`/blog/${post.slug}`}>{post.title}</Link>
                     </h2>
 
-                    <p className="text-xs text-muted dark:text-stone-300 font-sans leading-relaxed line-clamp-3 flex-1">
+                    <p className="text-xs text-muted  font-sans leading-relaxed line-clamp-3 flex-1">
                       {post.description}
                     </p>
 

@@ -25,7 +25,7 @@ export default function HtmlSitemapPage() {
         <h1 className="text-4xl md:text-5xl font-serif font-bold text-foreground">
           Sitemap Directory
         </h1>
-        <p className="text-sm md:text-base text-muted dark:text-stone-300 font-sans mt-3 max-w-2xl leading-relaxed">
+        <p className="text-sm md:text-base text-muted  font-sans mt-3 max-w-2xl leading-relaxed">
           The absolute visual structure of AromaAuthority pages. Easily navigate articles, educational topics, and policy updates.
         </p>
       </header>

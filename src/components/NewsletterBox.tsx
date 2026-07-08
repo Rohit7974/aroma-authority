@@ -37,7 +37,7 @@ export default function NewsletterBox() {
   return (
     <section
       aria-labelledby="newsletter-heading"
-      className="p-8 md:p-12 bg-stone-50 dark:bg-stone-900 border border-border rounded-xl text-center max-w-3xl mx-auto my-12 luxury-shadow"
+      className="p-8 md:p-12 bg-stone-50  border border-border rounded-xl text-center max-w-3xl mx-auto my-12 luxury-shadow"
     >
       <div className="max-w-xl mx-auto">
         <span className="text-xs uppercase tracking-widest text-accent font-sans font-semibold mb-2 block">
@@ -49,17 +49,17 @@ export default function NewsletterBox() {
         >
           Join Our Olfactory Circle
         </h2>
-        <p className="text-sm text-muted dark:text-stone-300 mb-8 leading-relaxed font-sans">
+        <p className="text-sm text-muted  mb-8 leading-relaxed font-sans">
           Subscribe to receive our latest scientific guides, candle care tutorials, fragrance family analyses, and exclusive buying discounts. No spam, unsubscribe anytime.
         </p>
 
         {status === "success" ? (
-          <div className="flex flex-col items-center justify-center p-4 bg-emerald-50 dark:bg-emerald-950/20 border border-emerald-200/80 rounded-lg animate-in zoom-in duration-300">
+          <div className="flex flex-col items-center justify-center p-4 bg-emerald-50  border border-emerald-200/80 rounded-lg animate-in zoom-in duration-300">
             <CheckCircle className="w-8 h-8 text-emerald-600 mb-2" />
-            <span className="text-sm font-sans font-semibold text-emerald-800 dark:text-emerald-400">
+            <span className="text-sm font-sans font-semibold text-emerald-800 ">
               Subscription Successful!
             </span>
-            <p className="text-xs text-emerald-700/80 dark:text-emerald-500/80 mt-1">
+            <p className="text-xs text-emerald-700/80  mt-1">
               Thank you for subscribing. Please check your inbox to confirm your membership.
             </p>
           </div>
@@ -83,7 +83,7 @@ export default function NewsletterBox() {
                   setEmail(e.target.value);
                   if (status === "error") setStatus("idle");
                 }}
-                className="w-full pl-10 pr-4 py-3 bg-white dark:bg-stone-950 border border-border focus:border-accent focus:ring-2 focus:ring-accent/20 rounded text-sm text-foreground placeholder:text-muted-light/60 transition outline-none disabled:opacity-60"
+                className="w-full pl-10 pr-4 py-3 bg-white  border border-border focus:border-accent focus:ring-2 focus:ring-accent/20 rounded text-sm text-foreground placeholder:text-muted-light/60 transition outline-none disabled:opacity-60"
               />
             </div>
             <button
@@ -98,7 +98,7 @@ export default function NewsletterBox() {
         )}
 
         {status === "error" && (
-          <p className="text-xs text-red-600 dark:text-red-400 text-left mt-2.5 ml-1 animate-in fade-in duration-200">
+          <p className="text-xs text-red-600  text-left mt-2.5 ml-1 animate-in fade-in duration-200">
             {errorMessage}
           </p>
         )}

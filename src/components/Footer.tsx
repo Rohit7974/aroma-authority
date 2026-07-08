@@ -6,7 +6,7 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-stone-100 dark:bg-stone-950 border-t border-border/80 mt-auto">
+    <footer className="bg-stone-100  border-t border-border/80 mt-auto">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-12 pb-12 border-b border-border/60">
           
@@ -18,7 +18,7 @@ export default function Footer() {
             >
               {siteConfig.logoText}
             </Link>
-            <p className="text-xs text-muted dark:text-stone-400 font-sans leading-relaxed">
+            <p className="text-xs text-muted  font-sans leading-relaxed">
               {siteConfig.description}
             </p>
             <div className="text-[10px] text-muted-light font-sans uppercase tracking-widest leading-relaxed">
