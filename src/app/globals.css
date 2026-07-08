@@ -1,0 +1,96 @@
+@import "tailwindcss";
+
+:root {
+  --background: #FAF9F6; /* Premium Alabaster */
+  --foreground: #1C1C1C; /* Charcoal */
+  --accent: #B5945F; /* Classic Brass/Gold */
+  --accent-hover: #9E7D47;
+  --muted: #575757;
+  --muted-light: #8C8C8C;
+  --border: #E5E0DA; /* Soft Warm Taupe */
+  --card: #FFFFFF;
+  --ring: #B5945F;
+}
+
+.dark {
+  --background: #121211;
+  --foreground: #E6E5E3;
+  --accent: #D4B28C;
+  --accent-hover: #C5A17A;
+  --muted: #A19F9C;
+  --muted-light: #73716E;
+  --border: #2A2927;
+  --card: #1B1A19;
+  --ring: #D4B28C;
+}
+
+@theme {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-accent: var(--accent);
+  --color-accent-hover: var(--accent-hover);
+  --color-muted: var(--muted);
+  --color-muted-light: var(--muted-light);
+  --color-border: var(--border);
+  --color-card: var(--card);
+  --color-ring: var(--ring);
+  
+  --font-sans: var(--font-inter), system-ui, -apple-system, sans-serif;
+  --font-serif: var(--font-cormorant), Georgia, serif;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-inter), system-ui, -apple-system, sans-serif;
+  overflow-x: hidden;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-cormorant), Georgia, serif;
+}
+
+/* Custom premium scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--background);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent);
+}
+
+/* Accessibility: Skip Navigation Link helper styles */
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: 0;
+  background: var(--accent);
+  color: #FFFFFF;
+  padding: 8px 16px;
+  z-index: 100;
+  transition: top 0.2s ease;
+}
+.skip-link:focus {
+  top: 0;
+  outline: none;
+}
+
+/* Luxury Card Shadow & Transitions */
+.luxury-shadow {
+  box-shadow: 0 4px 20px -2px rgba(181, 148, 95, 0.03);
+}
+.luxury-shadow-hover {
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.luxury-shadow-hover:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px -4px rgba(181, 148, 95, 0.08);
+}
